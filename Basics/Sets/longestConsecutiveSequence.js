@@ -1,7 +1,12 @@
 function longestConsecutiveSequence(arr) {
+
+  if(arr.length === 0) return 0;
+
+  if(arr.length === 1) return 1;
+
   const sequence = new Set(arr.sort((a, b) => a - b));
   let result = 1;
-  let maxLength = 0;
+  let maxLength = 1;
   for (const number of sequence) {
     if (sequence.has(number + 1)) {
       result += 1;
